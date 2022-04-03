@@ -3,12 +3,20 @@
 ## セットアップ方法
 
 - SATySFi 処理系をインストール
-- `src/sdpreview.satysfi-md` を `~/.satysfi/dist/md/sdpreview.satysfi-md` にコピー
-- `src/class-sdpreview.satyh` を `~/.satysfi/dist/packages/class-sdpreview.satyh` にコピー
+- 以下コードでclass-sdpreviewライブラリをインストール
+
+```bash
+opam pin add "git+https://github.com/monaqa/satysfi-class-sdpreview.git"
+
+opam install satysfi-class-sdpreview
+
+satyrographos install
+```
+
 - 適当な Markdown 文書を書いて以下コードで PDF 生成
 
   ```bash
-  satysfi satysfi --markdown sdpreview doc/example.md
+  satysfi satysfi --markdown class-sdpreview/sdpreview doc/example.md
   ```
 
 ## 参考
