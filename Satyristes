@@ -1,0 +1,46 @@
+;; For Satyrographos 0.0.2 series
+(version 0.0.2)
+
+;; Library declaration
+(library
+  ;; Library name
+  (name "class-sdpreview")
+  ;; Library version
+  (version "0.0.1")
+  ;; Files
+  (sources
+    (
+      (package "class-sdpreview.satyh" "./src/class-sdpreview.satyh")
+      (md "sdpreview.satysfi-md" "./src/sdpreview.satysfi-md")
+    ))
+  ;; OPAM package file
+  (opam "satysfi-class-sdpreview.opam")
+  ;; Dependency
+  (dependencies
+    (
+      (dist ())
+    )))
+
+
+;; Library doc declaration
+(libraryDoc
+  ;; Library doc name
+  (name "class-sdpreview-doc")
+  ;; Library version
+  (version "0.0.1")
+  ;; Working directory to build docs
+  (workingDirectory "doc")
+  ;; Build commands
+  (build
+    ;; Run SATySFi
+    ((satysfi "--markdown" "class-sdpreview/sdpreview" "example.md" "-o" "example.pdf")))
+  ;; Files
+  (sources
+    ((doc "example.pdf" "doc/example.pdf")))
+  ;; OPAM package file
+  (opam "satysfi-class-sdpreview-doc.opam")
+  ;; Dependency
+  (dependencies
+    ((class-sdpreview ()) ; the main library
+     (dist ()) ; Standard library
+    )))
