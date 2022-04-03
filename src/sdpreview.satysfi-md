@@ -1,5 +1,5 @@
 {
-  "depends": ["class-sdpreview"],
+  "depends": ["class-sdpreview/class-sdpreview"],
   "document": "SdPreview.document",
   "header-default": "(| title = {}; author = {}; |)",
   "paragraph": "+p",
